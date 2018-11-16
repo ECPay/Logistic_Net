@@ -1,0 +1,88 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>取得-小白單(全家超商C2C) HTML按鈕</h1>
+    <ol class="breadcrumb">
+        <li><a href="/Content/Index"><i class="fa fa-home"></i> Home</a></li>
+        <li class="active">取得-小白單(全家超商C2C) HTML按鈕</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <section class="col-lg-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">使用者資訊輸入</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    @using (Ajax.BeginForm(new AjaxOptions
+                    {
+                        OnComplete = "Complete"
+                    }))
+                    {
+                        <div class="form-group">
+                            <label>Merchant ID</label>
+                            <input id="MerchantID" name="MerchantID" class="form-control" placeholder="MerchantID ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>HashKey</label>
+                            <input id="HashKey" name="HashKey" class="form-control" placeholder="HashKey ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>HashIV</label>
+                            <input id="HashIV" name="HashIV" class="form-control" placeholder="HashIV ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>AllPayLogisticsID</label>
+                            <input id="AllPayLogisticsID" name="AllPayLogisticsID" class="form-control" placeholder="AllPayLogisticsID ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>CVSPaymentNo</label>
+                            <input id="CVSPaymentNo" name="CVSPaymentNo" class="form-control" placeholder="CVSPaymentNo ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>PlatformID</label>
+                            <input id="PlatformID" name="PlatformID" class="form-control" placeholder="PlatformID ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>Button Text</label>
+                            <input id="ButtonText" name="ButtonText" class="form-control" placeholder="Button Text ..." type="text">
+                        </div>
+                        <button id="gwSubmit" type="submit" class="btn btn-primary">Submit</button>
+                    }
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="row">
+        <section class="col-lg-12">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">回傳結果</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="form-group">
+                        <textarea id="taResponse" name="taResponse" class="form-control" rows="3" placeholder="Response ..."></textarea>
+                    </div>
+                    <div id="showResponse" class="form-group"></div>
+                </div>
+                <div id="gwLoading" class="overlay">
+                    <i class="fa fa-refresh fa-spin"></i>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>

@@ -1,0 +1,204 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!-- Content Header (Page header) -->
+<section class="content-header">
+    <h1>取得-新增宅配物流訂單 HTML按鈕</h1>
+    <ol class="breadcrumb">
+        <li><a href="/Content/Index"><i class="fa fa-home"></i> Home</a></li>
+        <li class="active">取得-新增宅配物流訂單 HTML按鈕</li>
+    </ol>
+</section>
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <section class="col-lg-12">
+            <div class="box box-primary">
+                <div class="box-header with-border">
+                    <h3 class="box-title">使用者資訊輸入</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    @using (Ajax.BeginForm(new AjaxOptions
+                    {
+                        OnComplete = "Complete"
+                    }))
+                    {
+                        <div class="form-group">
+                            <label>Merchant ID</label>
+                            <input id="MerchantID" name="MerchantID" class="form-control" placeholder="MerchantID ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>HashKey</label>
+                            <input id="HashKey" name="HashKey" class="form-control" placeholder="HashKey ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>HashIV</label>
+                            <input id="HashIV" name="HashIV" class="form-control" placeholder="HashIV ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>Merchant Trade No</label>
+                            <input id="MerchantTradeNo" name="MerchantTradeNo" class="form-control" placeholder="Merchant Trade No ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>Merchant Trade Date</label>
+                            <input id="MerchantTradeDate" name="MerchantTradeDate" class="form-control" placeholder="Merchant Trade Date ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>Logistics Type</label>
+                            @Html.DropDownList("LogisticsType", EnumHelper.GetSelectList(typeof(ECPay.SDK.Logistics.LogisticsTypes)), new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Logistics Sub Type</label>
+                            @Html.DropDownList("LogisticsSubType", EnumHelper.GetSelectList(typeof(ECPay.SDK.Logistics.LogisticsSubTypes)), new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>GoodsAmount</label>
+                            <input id="GoodsAmount" name="GoodsAmount" class="form-control" placeholder="GoodsAmount ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>CollectionAmount</label>
+                            <input id="CollectionAmount" name="CollectionAmount" class="form-control" placeholder="CollectionAmount ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>Is Collection</label>
+                            @Html.DropDownList("IsCollection", EnumHelper.GetSelectList(typeof(ECPay.SDK.Logistics.IsCollections)), new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>GoodsName</label>
+                            <input id="GoodsName" name="GoodsName" class="form-control" placeholder="GoodsName ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>SenderName</label>
+                            <input id="SenderName" name="SenderName" class="form-control" placeholder="SenderName ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>SenderPhone</label>
+                            <input id="SenderPhone" name="SenderPhone" class="form-control" placeholder="SenderPhone ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>SenderCellPhone</label>
+                            <input id="SenderCellPhone" name="SenderCellPhone" class="form-control" placeholder="SenderCellPhone ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>ReceiverName</label>
+                            <input id="ReceiverName" name="ReceiverName" class="form-control" placeholder="ReceiverName ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>ReceiverPhone</label>
+                            <input id="ReceiverPhone" name="ReceiverPhone" class="form-control" placeholder="ReceiverPhone ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>ReceiverCellPhone</label>
+                            <input id="ReceiverCellPhone" name="ReceiverCellPhone" class="form-control" placeholder="ReceiverCellPhone ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>ReceiverEmail</label>
+                            <input id="ReceiverEmail" name="ReceiverEmail" class="form-control" placeholder="ReceiverEmail ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>TradeDesc</label>
+                            <input id="TradeDesc" name="TradeDesc" class="form-control" placeholder="TradeDesc ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>ServerReplyURL</label>
+                            <input id="ServerReplyURL" name="ServerReplyURL" class="form-control" placeholder="ServerReplyURL ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>ClientReplyURL</label>
+                            <input id="ClientReplyURL" name="ClientReplyURL" class="form-control" placeholder="ClientReplyURL ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>LogisticsC2CReplyURL</label>
+                            <input id="LogisticsC2CReplyURL" name="LogisticsC2CReplyURL" class="form-control" placeholder="LogisticsC2CReplyURL ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>Remark</label>
+                            <input id="Remark" name="Remark" class="form-control" placeholder="Remark ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>PlatformID</label>
+                            <input id="PlatformID" name="PlatformID" class="form-control" placeholder="PlatformID ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>SenderZipCode</label>
+                            <input id="SenderZipCode" name="SenderZipCode" class="form-control" placeholder="SenderZipCode ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>SenderAddress</label>
+                            <input id="SenderAddress" name="SenderAddress" class="form-control" placeholder="SenderAddress ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>ReceiverZipCode</label>
+                            <input id="ReceiverZipCode" name="ReceiverZipCode" class="form-control" placeholder="ReceiverZipCode ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>ReceiverAddress</label>
+                            <input id="ReceiverAddress" name="ReceiverAddress" class="form-control" placeholder="ReceiverAddress ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>Temperature</label>
+                            @Html.DropDownList("Temperature", EnumHelper.GetSelectList(typeof(ECPay.SDK.Logistics.Temperatures)), new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Distance</label>
+                            @Html.DropDownList("Distance", EnumHelper.GetSelectList(typeof(ECPay.SDK.Logistics.Distances)), new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Specification</label>
+                            @Html.DropDownList("Specification", EnumHelper.GetSelectList(typeof(ECPay.SDK.Logistics.Specifications)), new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>ScheduledPickupTime</label>
+                            @Html.DropDownList("ScheduledPickupTime", EnumHelper.GetSelectList(typeof(ECPay.SDK.Logistics.ScheduledPickupTimes)), new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>ScheduledDeliveryTime</label>
+                            @Html.DropDownList("ScheduledDeliveryTime", EnumHelper.GetSelectList(typeof(ECPay.SDK.Logistics.ScheduledDeliveryTimes)), new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>ScheduledDeliveryDate</label>
+                            <input id="ScheduledDeliveryDate" name="ScheduledDeliveryDate" class="form-control" placeholder="ScheduledDeliveryDate ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>PackageCount</label>
+                            <input id="PackageCount" name="PackageCount" class="form-control" placeholder="PackageCount ..." type="text">
+                        </div>
+                        <div class="form-group">
+                            <label>Button Text</label>
+                            <input id="ButtonText" name="ButtonText" class="form-control" placeholder="Button Text ..." type="text">
+                        </div>
+                        <button id="gwSubmit" type="submit" class="btn btn-primary">Submit</button>
+                    }
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="row">
+        <section class="col-lg-12">
+            <div class="box box-info">
+                <div class="box-header with-border">
+                    <h3 class="box-title">回傳結果</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="box-body">
+                    <div class="form-group">
+                        <textarea id="taResponse" name="taResponse" class="form-control" rows="3" placeholder="Response ..."></textarea>
+                    </div>
+                    <div id="showResponse" class="form-group"></div>
+                </div>
+                <div id="gwLoading" class="overlay">
+                    <i class="fa fa-refresh fa-spin"></i>
+                </div>
+            </div>
+        </section>
+    </div>
+</section>

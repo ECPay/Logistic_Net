@@ -1,0 +1,11 @@
+﻿body {
+    font-family: "微軟正黑體",Verdana,Arial;
+}
+
+#showResponse {
+    word-break: break-all;
+}
+
+.PrintToolsBlock {
+    position:absolute !important;
+}

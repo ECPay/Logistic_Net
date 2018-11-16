@@ -1,0 +1,78 @@
+﻿@{
+    string actionName = ViewContext.RouteData.Values["action"].ToString();
+    string controllerName = ViewContext.RouteData.Values["controller"].ToString();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>綠界科技 物流SDK測試範例</title>
+    <script>
+        var actionName = '@actionName';
+        var controllerName = '@controllerName';
+    </script>
+    @Styles.Render("~/AdminLte/css")
+    @Scripts.Render("~/AdminLte/js")
+</head>
+<body class="skin-blue">
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="@Url.Action("Index","Content")" class="logo" style="font-size:18px;"><b>綠界科技</b> 物流SDK測試</a>
+            <nav class="navbar navbar-static-top" role="navigation">
+                <!-- Sidebar toggle button-->
+                <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+            </nav>
+        </header>
+        <!-- Left side column. contains the logo and sidebar -->
+        <aside class="main-sidebar">
+            <ul class="sidebar-menu">
+                <li class="header">功能列表</li>
+                <li class="treeview active menu-open">
+                    <a href="#">
+                        <i class="fa fa-th"></i>
+                        <span>物流訂單</span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li id="QueryLogisticsInfo"><a href="@Url.Action("QueryLogisticsInfo","Content")"><i class="fa fa-fw fa-search"></i> 查詢-物流訂單</a></li>
+                        <li id="CreateLogisticsOrderForPickUp"><a href="@Url.Action("CreateLogisticsOrderForPickUp","Content")"><i class="fa fa-fw fa-plus-square"></i> 新增-超商物流訂單</a></li>
+                        <li id="CreateLogisticsOrderForPickUpSubmitButton"><a href="@Url.Action("CreateLogisticsOrderForPickUpSubmitButton","Content")"><i class="fa fa-fw fa-link"></i> 取得-新增超商物流訂單 HTML按鈕</a></li>
+                        <li id="CreateLogisticsOrderForShipping"><a href="@Url.Action("CreateLogisticsOrderForShipping","Content")"><i class="fa fa-fw fa-plus-square"></i> 新增-宅配物流訂單</a></li>
+                        <li id="CreateLogisticsOrderForShippingSubmitButton"><a href="@Url.Action("CreateLogisticsOrderForShippingSubmitButton","Content")"><i class="fa fa-fw fa-link"></i> 取得-新增宅配物流訂單 HTML按鈕</a></li>
+                    </ul>
+                </li>
+                <li class="treeview active menu-open">
+                    <a href="#">
+                        <i class="fa fa-th"></i>
+                        <span>列印托運單</span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li id="PrintTradeDoc"><a href="@Url.Action("PrintTradeDoc","Content")"><i class="fa fa-fw fa-print"></i> 列印-托運單(宅配)/一段標(超商取貨)</a></li>
+                        <li id="GeneratePrintTradeDocSubmitButton"><a href="@Url.Action("GeneratePrintTradeDocSubmitButton","Content")"><i class="fa fa-fw fa-link"></i> 取得-托運單(宅配)/一段標(超商取貨) HTML按鈕</a></li>
+                        <li id="PrintUnimartC2CBill"><a href="@Url.Action("PrintUnimartC2CBill","Content")"><i class="fa fa-fw fa-print"></i> 列印-繳款單(統一超商C2C)</a></li>
+                        <li id="GeneratePrintUnimartC2CBillSubmitButton"><a href="@Url.Action("GeneratePrintUnimartC2CBillSubmitButton","Content")"><i class="fa fa-fw fa-link"></i> 取得-繳款單(統一超商C2C) HTML按鈕</a></li>
+                        <li id="PrintFamilyC2CBill"><a href="@Url.Action("PrintFamilyC2CBill","Content")"><i class="fa fa-fw fa-print"></i> 列印-小白單(全家超商C2C)</a></li>
+                        <li id="GeneratePrintFamilyC2CBillSubmitButton"><a href="@Url.Action("GeneratePrintFamilyC2CBillSubmitButton","Content")"><i class="fa fa-fw fa-link"></i> 取得-小白單(全家超商C2C) HTML按鈕</a></li>
+                    </ul>
+                </li>
+                <li class="treeview active menu-open">
+                    <a href="#">
+                        <i class="fa fa-th"></i>
+                        <span>電子地圖</span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li id="CVSMap"><a href="@Url.Action("CVSMap","Content")"><i class="fa fa-fw fa-map-marker"></i> 取得-超商電子地圖</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </aside>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

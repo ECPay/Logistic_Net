@@ -1,0 +1,1 @@
+﻿<%@ Application CodeBehind="Global.asax.cs" Inherits="ECPay.Logistics.ClientWebAPISample.WebApiApplication" Language="C#" %>
