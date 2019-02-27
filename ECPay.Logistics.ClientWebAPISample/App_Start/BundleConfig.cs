@@ -20,6 +20,7 @@ namespace ECPay.Logistics.ClientWebAPISample
                    .Include("~/Scripts/jquery-{version}.js",
                             "~/Scripts/jquery.validate*",
                             "~/Scripts/jquery.unobtrusive-ajax*",
+                            "~/Scripts/popper.js",
                             "~/Scripts/bootstrap.js",
                             "~/admin-lte/js/app.js",
                             "~/Scripts/gwsdk.js"));

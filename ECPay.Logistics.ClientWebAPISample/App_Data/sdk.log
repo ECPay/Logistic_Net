@@ -1,0 +1,2 @@
+INFO	2019-02-14 13:22:33	OUTPUT	Logistics.CVSMAP: Device=1&ExtraData=&IsCollection=Y&LogisticsSubType=UNIMARTC2C&LogisticsType=CVS&MerchantID=2000933&MerchantTradeNo=test2019021400001&ServerReplyURL=https%3A%2F%2Fpayment-stage.Opay.tw%2FMockMerchant%2FReceiveClientRedirectURLResult
+INFO	2019-02-14 13:27:29	OUTPUT	Logistics.CVSMAP: Device=0&ExtraData=&IsCollection=Y&LogisticsSubType=HILIFEC2C&LogisticsType=CVS&MerchantID=2000933&MerchantTradeNo=test2019021400002&ServerReplyURL=https%3A%2F%2Fpayment-stage.Opay.tw%2FMockMerchant%2FReceiveClientRedirectURLResult

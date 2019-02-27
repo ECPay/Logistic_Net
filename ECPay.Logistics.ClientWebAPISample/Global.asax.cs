@@ -19,7 +19,7 @@ namespace ECPay.Logistics.ClientWebAPISample
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
-            RollbarLocator.RollbarInstance.Configure(new RollbarConfig(postServerItemAccessToken) { Environment = "SDK-1.0.0" });
+            RollbarLocator.RollbarInstance.Configure(new RollbarConfig(postServerItemAccessToken) { Environment = "SDK-1.0.1" });
         }
     }
 
