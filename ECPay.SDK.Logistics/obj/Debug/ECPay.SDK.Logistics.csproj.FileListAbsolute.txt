@@ -1,6 +1,0 @@
-D:\ECgithub\Logistic_Net\ECPay.SDK.Logistics\bin\Debug\ECPay.SDK.Logistics.dll
-D:\ECgithub\Logistic_Net\ECPay.SDK.Logistics\bin\Debug\ECPay.SDK.Logistics.pdb
-D:\ECgithub\Logistic_Net\ECPay.SDK.Logistics\bin\Debug\System.Net.Http.dll
-D:\ECgithub\Logistic_Net\ECPay.SDK.Logistics\obj\Debug\ECPay.SDK.Logistics.csprojResolveAssemblyReference.cache
-D:\ECgithub\Logistic_Net\ECPay.SDK.Logistics\obj\Debug\ECPay.SDK.Logistics.dll
-D:\ECgithub\Logistic_Net\ECPay.SDK.Logistics\obj\Debug\ECPay.SDK.Logistics.pdb

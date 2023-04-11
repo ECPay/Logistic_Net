@@ -1,4 +1,4 @@
-# 綠界科技 物流整合介接Net C# 第一版
+# 綠界科技 物流整合介接 .Net C# 第一版
 ---
 
 ## 1. 介紹
@@ -16,7 +16,7 @@
 
 
 ## 2. 安裝環境
-  - .net framework 4.5 以上
+  - .Net Framework 4.5 以上
   - .SDK 原始碼Solution File (.sln) 支援Visual Studio 2015 以後的版本
 
 ## 3. 使用教學
